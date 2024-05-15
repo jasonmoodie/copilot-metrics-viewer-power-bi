@@ -21,11 +21,56 @@ Located in the  `./samples` directory you'll find sample JSON and PBIX files use
 
 3. Open the **Power Query Editor** by right clicking the `GH Copilot - Details` and selecting **Edit query**. 
 4. Modify the **Source** step by clicking the settings icon, selecting your JSON file and clicking **OK**.
-![Image of a data source selector in Power Query Editor.](https://github.com/jasonmoodie/pbi-4-ghcopilot/blob/main/assets/Modify_JSON_source.png)
-5. Repeat steps 3 and 4 for the `GH Copilot - Summary` **Source**.
-6. Click **Close and Apply** in the top-left of the **Power Query Editor**.
-7. On the **Report View** page click **Refresh** to load the new data into your dashboard.
-8. **Happy Customizing!**
+   ![Image of a data source selector in Power Query Editor.](https://github.com/jasonmoodie/pbi-4-ghcopilot/blob/main/assets/Modify_JSON_source.png)
+6. Repeat steps 3 and 4 for the `GH Copilot - Summary` **Source**.
+7. Click **Close and Apply** in the top-left of the **Power Query Editor**.
+8. On the **Report View** page click **Refresh** to load the new data into your dashboard.
+9. **Happy Customizing!**
+
+## Connect to Metrics API
+> Notes: The REST API provides metrics for the previous 28 days and is refreshed daily with the previous days data. This is currently in beta, so please ensure you are using the latest version of the [REST API](https://docs.github.com/en/rest/copilot/copilot-usage).
+
+In order to connect we'll need to generate a token and link to your metrics data:
+1. Determine if you'll be using the `Enterprise`: **/enterprises/<ENTERPRISE>/copilot/usage** or `Organization`: **/orgs/<ORG>/copilot/usage** URL.
+2. Follow the instructions below to generate a token with permissions to access the API:
+   [REST API endpoints for GitHub Copilot usage metrics - GitHub Docs](https://docs.github.com/en/rest/copilot/copilot-usage)
+4. Open the **Power Query Editor** by right clicking the `GH Copilot - Details` and selecting **Edit query**. 
+5. Select **Advanced editor**.
+
+   ![Image of Power Query Advanced Editor.](https://github.com/jasonmoodie/pbi-4-ghcopilot/blob/main/assets/Advanced_editor.png)
+6. Replace lines 1 and 2 with following, ensure to replace <YOUR-TOKEN> and <ORG> with your values.
+
+  **Organization**
+  ```powerquery
+  let
+      // Replace <YOUR-TOKEN> and <ORG> with your actual token and enterprise name.
+      url = "https://api.github.com/orgs/<ORG>/copilot/usage",
+      headers = [
+          #"Accept" = "application/vnd.github+json",
+          #"Authorization" = "Bearer <YOUR-TOKEN>",
+          #"X-GitHub-Api-Version" = "2022-11-28"
+      ],
+      Source = Json.Document(Web.Contents(url, [Headers=headers])),
+  ```
+  **Enterprise**
+  ```powerquery
+  let
+      // Replace <YOUR-TOKEN> and <ENTERPRISE> with your actual token and enterprise name.
+      url = "https://api.github.com/enterprises/<ENTERPRISE>/copilot/usage",
+      headers = [
+          #"Accept" = "application/vnd.github+json",
+          #"Authorization" = "Bearer <YOUR-TOKEN>",
+          #"X-GitHub-Api-Version" = "2022-11-28"
+      ],
+      Source = Json.Document(Web.Contents(url, [Headers=headers])),
+  ```
+
+7. Your Power Query will look something like this:
+   ![Image of Power Query Advanced Editor.](https://github.com/jasonmoodie/pbi-4-ghcopilot/blob/main/assets/Advanced_editor_query.png)
+8. Click **OK** to close the editor and select `Anonymous` authentication if prompted.
+9. Repeat steps 3 and 8 for the `GH Copilot - Summary` **Source**.
+10. Click **Close and Apply** in the top-left of the **Power Query Editor**.
+11. On the **Report View** page click **Refresh** to load the new data into your dashboard.
 
 
 
