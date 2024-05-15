@@ -44,7 +44,7 @@ In order to connect we'll need to generate a token and link to your metrics data
 **Organization**
   ```powerquery
   let
-      // Replace <YOUR-TOKEN> and <ORG> with your actual token and enterprise name.
+      // Replace <YOUR-TOKEN> and <ORG> with your actual token and org name.
       url = "https://api.github.com/orgs/<ORG>/copilot/usage",
       headers = [
           #"Accept" = "application/vnd.github+json",
