@@ -3,7 +3,7 @@ With the release of the [GitHub Copilot Metrics API](https://github.blog/changel
 
 However, many organizations that we work with already have established Power BI teams. If your organization is **already using Power BI, please read on**
 
-Located in the  `./samples` directory you'll find sample JSON and PBIX files used to create the dashboar below.
+Located in the  `./samples` directory you'll find sample JSON and PBIX files used to create the dashboard below.
 
 ![Image of a Power BI dashboard with GitHuub Copilot Metrics API data displayed.](https://github.com/jasonmoodie/pbi-4-ghcopilot/blob/main/assets/Sample_PBI.png)
 
