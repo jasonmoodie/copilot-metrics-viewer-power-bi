@@ -1,5 +1,5 @@
 # Using Power BI with GitHub Copilot Metrics API
-With the release of the [GitHub Copilot Metrics API](https://github.blog/changelog/2024-04-23-github-copilot-metrics-api-now-available-in-public-beta/) many teams are looking to leverage this data to help monitor usage against their KPIs. For many, the Copilot Metrics Viewer ([github-copilot-resources/copilot-metrics-viewer](https://github.com/github-copilot-resources/copilot-metrics-viewer)) might be a great option. 
+With the release of the [GitHub Copilot Metrics API](https://github.blog/changelog/2024-04-23-github-copilot-metrics-api-now-available-in-public-beta/) many teams are looking to leverage this data to help monitor usage against their KPIs. For some, the Copilot Metrics Viewer ([github-copilot-resources/copilot-metrics-viewer](https://github.com/github-copilot-resources/copilot-metrics-viewer)) might be a great option. 
 
 However, many organizations that we work with already have established Power BI teams. If your organization is **already using Power BI, please read on!**
 
