@@ -28,7 +28,7 @@ Located in the  `./samples` directory you'll find sample JSON and PBIX files use
 9. **Happy Customizing!**
 
 ## Connect to Metrics API
-> Notes: The REST API provides metrics for the previous 28 days and is refreshed daily with the previous days data. This is currently in beta, so please ensure you are using the latest version of the [REST API](https://docs.github.com/en/rest/copilot/copilot-usage).
+> Notes: The REST API provides metrics for the previous 28 days and is refreshed daily with data from the previous day. This is currently in beta, so please ensure you are using the latest version of the [REST API](https://docs.github.com/en/rest/copilot/copilot-usage).
 
 In order to connect we'll need to generate a token and link to your metrics data:
 1. Download and open the sample `GitHub Copilot - Telemetry Sample (DM).pbix` file.
