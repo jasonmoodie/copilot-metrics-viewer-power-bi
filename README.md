@@ -1,7 +1,7 @@
 # Using Power BI with GitHub Copilot Metrics API
 With the release of the [GitHub Copilot Metrics API](https://github.blog/changelog/2024-04-23-github-copilot-metrics-api-now-available-in-public-beta/) many teams are looking to leverage this data to help monitors usahe against their KPIs. For many, the Copilot Metrics Viewer ([github-copilot-resources/copilot-metrics-viewer](https://github.com/github-copilot-resources/copilot-metrics-viewer)) might be a great option. 
 
-However, many organizations that we work with already have established Power BI teams. If your organizations is **already using Power BI read on!**
+However, many organizations that we work with already have established Power BI teams. If your organization is **already using Power BI, please read on**
 
 Located in the  `./samples` directory you'll find sample JSON and PBIX files used to create the dashboar below.
 
@@ -25,6 +25,7 @@ Located in the  `./samples` directory you'll find sample JSON and PBIX files use
 5. Repeat steps 3 and 4 for the `GH Copilot - Summary` Source.
 6. Click **Close and Apply** in the top-left of the Power Query Editor.
 7. On the Report View page click **Refresh** to load the new data into your dashboard.
+8. **Happy Customizing!**
 
 
 
