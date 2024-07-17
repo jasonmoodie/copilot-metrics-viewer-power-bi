@@ -72,7 +72,7 @@ In order to connect we'll need to generate a token and link to your metrics data
 10. Click **Close and Apply** in the top-left of the **Power Query Editor**.
 11. On the **Report View** page click **Refresh** to load the new data into your dashboard.
 
-## Deployment
+## Publishing
 If you need help deploying or publishing this script, please see: [Publish README](/publish/README.md)
 
 
