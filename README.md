@@ -73,7 +73,7 @@ In order to connect we'll need to generate a token and link to your metrics data
 11. On the **Report View** page click **Refresh** to load the new data into your dashboard.
 
 ## Deployment
-If you need help deploying or publishing this script, please see: [Deployment README](https://github.com/aj-enns/pbi-4-ghcopilot/blob/main/deploy/README.md)
+If you need help deploying or publishing this script, please see: [Deployment README](/deploy/README.md)
 
 
 
