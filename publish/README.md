@@ -1,6 +1,6 @@
-# Deployment
+# Publishing your PBI Report
 
-The report can be deployed many different ways.  Publishing from PowerBI Desktop is likely the fastest.  For a more automated version which would include report version, you should use a repository.  Below are the instructions on how to deploy your report in Azure DevOps repos, into your Power BI Workspace using a Azure DevOps Pipeline.
+The report can be published many different ways.  Publishing from PowerBI Desktop is likely the fastest.  For a more automated version which would include report version, you should use a repository.  Below are the instructions on how to deploy your report in Azure DevOps repos, into your Power BI Workspace using a Azure DevOps Pipeline.
 
 ### Installing the ADO Extension
  
