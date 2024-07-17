@@ -1,0 +1,38 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+# Install Power BI Actions
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Install-Module -Name MicrosoftPowerBIMgmt -Scope CurrentUser -Force
+      Install-Module -Name MicrosoftPowerBIMgmt.Profile -Scope CurrentUser -Force
+      Install-Module -Name MicrosoftPowerBIMgmt.Reports -Scope CurrentUser -Force
+  displayName: 'Install Power BI Actions'
+
+# Deploy PBIX file using PowerShell with Service Principal Authentication
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Authenticate with Power BI Service using Service Principal
+      $tenantId = "$(TenantId)"
+      $appId = "$(AppId)"
+      $appSecret = "$(AppSecret)"
+      $secureAppSecret = ConvertTo-SecureString -String $appSecret -AsPlainText -Force
+      $credential = New-Object System.Management.Automation.PSCredential($appId, $secureAppSecret)
+      Connect-PowerBIServiceAccount -ServicePrincipal -Credential $credential -Tenant $tenantId
+      
+      # Ensure the MicrosoftPowerBIMgmt.Reports module is imported
+      Import-Module MicrosoftPowerBIMgmt.Reports
+
+      # Publish PBIX file
+      New-PowerBIReport -Path '../samples/GitHubCopilotTelemetrySample.pbix' -WorkspaceId "$(WorkspaceId)" -Name 'copilot_metrics_usage_sample'
+      
+      # Note: Ensure that the necessary modules and credentials are correctly set up for this script to work.
+  displayName: 'Deploy PBIX file to Power BI Workspace using PowerShell'
