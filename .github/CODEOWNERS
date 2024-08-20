@@ -1,0 +1,6 @@
+# This is a comment
+# Each line is a file pattern followed by one or more owners.
+
+# The '*' pattern refers to all files in the repository.
+* @jasonmoodie @Eldrick19
+

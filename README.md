@@ -1,4 +1,5 @@
-# Using Power BI with GitHub Copilot Metrics API
+# GitHub Copilot Metrics Viewer for Power BI
+
 With the release of the [GitHub Copilot Metrics API](https://github.blog/changelog/2024-04-23-github-copilot-metrics-api-now-available-in-public-beta/) many teams are looking to leverage this data to help monitor usage against their KPIs. For some, the Copilot Metrics Viewer ([github-copilot-resources/copilot-metrics-viewer](https://github.com/github-copilot-resources/copilot-metrics-viewer)) might be a great option. 
 
 However, many organizations that we work with already have established Power BI teams. If your organization is **already using Power BI, please read on!**
@@ -7,7 +8,9 @@ Located in the  `./samples` directory you'll find sample JSON and PBIX files use
 
 ![Image of a Power BI dashboard with GitHuub Copilot Metrics API data displayed.](https://github.com/jasonmoodie/pbi-4-ghcopilot/blob/main/assets/Sample_PBI.png)
 
-## Modify the local JSON data source
+## Setup
+
+### Test: Modify the local JSON data source
 > Note: This example provided a proof of concept for loading metrics data and requires an exported JSON file. If you have access to the REST API you can configure the **Source** accordingly.
 
 1. Download and open the sample `GitHub Copilot - Telemetry Sample (DM).pbix` file.
@@ -27,7 +30,7 @@ Located in the  `./samples` directory you'll find sample JSON and PBIX files use
 8. On the **Report View** page click **Refresh** to load the new data into your dashboard.
 9. **Happy Customizing!**
 
-## Connect to Metrics API
+### Connect to Metrics API
 > Notes: The REST API provides metrics for the previous 28 days and is refreshed daily with data from the previous day. This is currently in beta, so please ensure you are using the latest version of the [REST API](https://docs.github.com/en/rest/copilot/copilot-usage).
 
 In order to connect we'll need to generate a token and link to your metrics data:
@@ -75,6 +78,10 @@ In order to connect we'll need to generate a token and link to your metrics data
 ## Publishing
 If you need help deploying or publishing this script, please see: [Publish README](/publish/README.md)
 
+## Maintainers
 
+@jasonmoodie, @Eldrick19
 
+## Support
 
+These are just files for you to download and use as you see fit. If you have questions about how to use them, please reach out to the maintainers, but we cannot guarantee a response with SLAs.
