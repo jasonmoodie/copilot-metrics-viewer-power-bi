@@ -11,7 +11,7 @@ However, many organizations that we work with already have established Power BI 
 - Custom model slicing support, coming soon!
 - Data can be aggregated by enterprise, organization or team.
 
-Located in the  `./samples` directory you'll find sample JSON and PBIX files used to create the *new* dashboard below.
+Located in the  `./samples` directory you'll find sample JSON and PBIX files used to create the dashboard below.
 > Note: The legacy GitHub Copilot Usage API is still available and can be used with the `GitHub Copilot - Telemetry Sample (Usage).pbix` file. For instructions, see [Usage_API.md](USAGE_API.md).
 
 ![Image of the Power BI dashboard with sample GitHub Copilot Metrics API data displayed.](./assets/Sample_Metrics_PBI.png)
@@ -25,7 +25,7 @@ In order to connect we'll need to generate a token and link to your metrics data
 1. Download and open the sample `GitHub Copilot - Telemetry Sample (Metrics with KPI).pbix` file.
 2. Determine if you'll be using the `Enterprise`, `Organization` or `Team` URL.
 3. Follow the instructions below to generate a token with permissions to access the API:
-   [REST API endpoints for GitHub Copilot usage metrics - GitHub Docs](https://docs.github.com/en/rest/copilot/copilot-usage)
+   [REST API endpoints for Copilot metrics - GitHub Enterprise Cloud Docs](https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-metrics)
 >**IMPORTANT: Do not share this token and ensure you follow you organizations security policies.**
 4. The file contains the following data sources, descriptions are inlcuded below.
 
@@ -108,7 +108,7 @@ In order to connect we'll need to generate a token and link to your metrics data
 2. Open the **Power Query Editor** by clicking **Transform data** in the top-menu and selecting **Tranform data**. 
 3. Click on **source** query in the left-menu
 4. In the right-menu under **APPLIED STEPS** click the gear (settings) icon, selecting your JSON file and clicking **OK**.  
-   ![Image of a data source selector in Power Query Editor.](https://github.com/github-copilot-resources/copilot-metrics-viewer-power-bi/blob/main/assets/Modify_JSON_source.png)
+   ![Image of a data source selector in Power Query Editor.](./assets/Modify_JSON_source.png)
 5. Click **Close and Apply** in the top-left of the **Power Query Editor**.
 6. On the **Report View** page click **Refresh** to load the new data into your dashboard.
 7. **Happy Customizing!**
