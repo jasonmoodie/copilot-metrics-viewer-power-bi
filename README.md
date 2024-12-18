@@ -45,7 +45,8 @@ In order to connect we'll need to generate a token and link to your metrics data
     | source                             | Base source used to connect to API or local JSON files.       |
     | GH Copilot - dotcom chat           | Detailed metrics of code completions using chat on the web.   |
     | GH Copilot - ide chat              | Detailed metrics of code completions using chat within the IDE. |
-    | GH Copilot - ide code completions  | Detailed metrics of code completions within the IDE.          |
+    | GH Copilot - ide code completions editors  | Detailed metrics of code completions within the IDE.          |
+    | GH Copilot - ide code completions languages  | Detailed metrics of engaged users by language within the IDE.          |
     | GH Copilot - pull requests         | Detailed metrics of pull requests.                            |
     | GH Copilot - summary               | Daily summary of active and engaged users.                    |
 5. Open the **Power Query Editor** by clicking **Transform data** in the top-menu and selecting **Tranform data**. 
