@@ -4,7 +4,17 @@ With the release of the latest [GitHub Copilot Metrics API](https://github.com/o
 
 However, many organizations that we work with already have established Power BI teams. If your organization is **already using Power BI, please read on!**
 
-## New Features
+## Table of Contents
+- [New Metrics API Features](#new-features)
+- [Metrics Dashboard Setup](#metrics-dashboard-setup)
+  - [Connect to Metrics API](#connect-to-metrics-api)
+  - [Connect to local JSON data source](#connect-to-local-json-data-source)
+- [KPI - Savings Dashboard](#kpi---savings-dashboard)
+- [Publishing](#publishing)
+- [Maintainers](#maintainers)
+- [Support](#support)
+
+## New Metrics API Features
 - New metrics for Pull Request summaries and Copilot Chat on GitHub.com.
 - Clarity on code completions and Copilot Chat usage in IDEs.
 - User engagement summaries updated daily.
@@ -16,7 +26,7 @@ Located in the  `./samples` directory you'll find sample JSON and PBIX files use
 
 ![Image of the Power BI dashboard with sample GitHub Copilot Metrics API data displayed.](./assets/Sample_Metrics_PBI.png)
 
-## Setup
+## Metrics Dashboard Setup
 
 ### Connect to Metrics API
 > Notes: The REST API provides metrics for the previous 28 days and is refreshed daily with data from the previous day. Please ensure you are using the latest version of the [REST API](https://docs.github.com/en/enterprise-cloud@latest/rest/copilot/copilot-metrics).
@@ -101,7 +111,7 @@ In order to connect we'll need to generate a token and link to your metrics data
 10. Click **Close and Apply** in the top-left of the **Power Query Editor**.
 11. On the **Report View** page click **Refresh** to load the new data into your dashboard.
 
-### Test: Modify the local JSON data source
+### Connect to local JSON data source
 > Note: This example provided a proof of concept for loading metrics data and requires an exported JSON file. If you have access to the REST API you can configure the **Source** accordingly.
 
 1. Download and open the sample `GitHub Copilot - Telemetry Sample (Metrics with KPIs).pbix` file.
@@ -112,6 +122,23 @@ In order to connect we'll need to generate a token and link to your metrics data
 5. Click **Close and Apply** in the top-left of the **Power Query Editor**.
 6. On the **Report View** page click **Refresh** to load the new data into your dashboard.
 7. **Happy Customizing!**
+
+## KPI - Savings Dashboard
+A new KPI tab has been added to the dashboard to help you estimate savings. The KPI tab is configured to display the potential time and case savings. You can configure the KPI tab to display these details by modifying the following fields in the `config` data sourcefrom the **Tabel view**:
+
+| Name                       | Description                                      |
+| :------------------------- | :----------------------------------------------- |
+| total_devs                 | Total number of developers at your organization. |
+| avg_hourly_salary          | Average hourly salary of developers.             |
+| annual_work_weeks          | Total number of work weeks in a year.            |
+| average_weekly_hour_savings| Average number of hours developers saved per week. The default is 3.5 hours and assumed a 10% time saving, but this can be updated based on customer survey data or other measurements.          |
+
+These values can be modified in the `config` data source below:
+![Image of the KPI config table in the Power BI.](./assets/KPI_config.png)
+
+Once configured, the KPI dashboard will display this potential savings against current usage pulled from the Metrics API:
+![Image of the KPI tab in the Power BI.](./assets/Sample_KPI_PBI.png)
+
 
 ## Publishing
 If you need help deploying or publishing this script, please see: [Publish README](/publish/README.md)
